@@ -1,28 +1,23 @@
-# The IQ Series: Foundry IQ
+# The IQ Series
 
-<!-- Banner image placeholder - add your banner here -->
-![The IQ Series Banner](./images/banner.png)
+![The IQ Series Banner](./images/iq-series-banner.png)
 
-[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/iq-series)](https://github.com/microsoft/iq-series/watchers)
-[![GitHub forks](https://img.shields.io/github/forks/microsoft/iq-series)](https://github.com/microsoft/iq-series/fork)
-[![GitHub stars](https://img.shields.io/github/stars/microsoft/iq-series)](https://github.com/microsoft/iq-series/stargazers)
+Master Microsoft IQ with The IQ Series! Microsoft IQ is a suite of AI-driven intelligence tools, including **Foundry IQ**, **Work IQ**, and **Fabric IQ**, that power knowledge-centric AI systems where retrieval, reasoning, synthesis, and orchestration come together under a single model-driven experience.
 
-[Azure AI Community Discord](https://discord.gg/REmjGvvFpW)
+Each episode features an executive opening, an in-depth tech talk, and a doodle summary. Episode folders also include Jupyter notebook cookbooks that break the topic into key phases with hands-on, step-by-step guidance.
 
-[Microsoft Foundry Developer Forum](https://aka.ms/foundry/forum)
+> **Note:** The series kicks off with **Foundry IQ** episodes. Work IQ and Fabric IQ content is coming soon!
 
-🚀 Master Foundry IQ with The IQ Series! Learn how Microsoft's intelligence layer enables knowledge-centric AI systems where retrieval, reasoning, synthesis, and orchestration come together under a single model-driven experience. This repo includes step-by-step guides, live coding samples, and expert insights—everything you need to build smarter, agent-aware knowledge workflows!
+📺 All episodes will be available on YouTube.
 
-📺 All episodes of The IQ Series will be available on YouTube.
+## 🤔 Why Learn Microsoft IQ with The IQ Series?
 
-## 🤔 Why Learn Foundry IQ with The IQ Series?
-
-- **Expert-Led** – Learn directly from AI & Microsoft experts.
-- **Beyond RAG Fundamentals** – Move past foundational concepts to production-grade patterns.
-- **Agentic Knowledge Workflows** – Understand how Foundry IQ plans retrieval, synthesizes answers, and supports multi-step reasoning.
-- **Exclusive Video Content** – Executive intros, in-depth tech talks, and doodle summaries.
-- **Sample Code** – Follow along with ready-to-use implementations and best practices.
-- **Doodles & Visual Explanations** – Complex concepts made simple with engaging visuals by Tomomi Imura.
+- **Expert-Led**: Learn directly from AI & Microsoft experts.
+- **Full IQ Suite Coverage**: Explore Foundry IQ, Work IQ, and Fabric IQ as they roll out.
+- **Agentic Knowledge Workflows**: Understand how IQ tools plan retrieval, synthesize answers, and support multi-step reasoning.
+- **Video Episodes**: Executive openings, in-depth tech talks, and doodle summaries.
+- **Hands-On Cookbooks**: Jupyter notebooks that segment each topic into key phases.
+- **Doodles & Visual Explanations**: Complex concepts made simple with engaging visuals.
 
 ## 🚀 Get Started in 3 Easy Steps
 
@@ -36,17 +31,28 @@
 
 ## Learning Episodes
 
-The IQ Series helps developers and data practitioners understand Foundry IQ as Microsoft's intelligence layer for knowledge-centric AI systems.
+The IQ Series helps developers and data practitioners understand Microsoft IQ, a suite of AI-driven intelligence tools. The series starts with Foundry IQ and will expand to Work IQ and Fabric IQ in future episodes.
 
-| **Episode**                                                                                                                          | **Description**                                                                    | **Video**       | **Code Sample**                                                                          | **Blog**        |
-|--------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|-----------------|------------------------------------------------------------------------------------------|-----------------|
-| [Unified Knowledge Layer for Agents](./1-Foundry-IQ-Unified-Knowledge-Layer-for-Agents/README.md)                                    | Understand Foundry IQ's core components and how it fits into the agent architecture | Coming Soon     | [Sample](./1-Foundry-IQ-Unified-Knowledge-Layer-for-Agents/sample/)                      | Coming Soon     |
-| [Building the Data Pipeline with Knowledge Sources](./2-Foundry-IQ-Building-the-Data-Pipeline-with-Knowledge-Sources/README.md)      | Learn how different content enters Foundry IQ from various sources                 | Coming Soon     | [Sample](./2-Foundry-IQ-Building-the-Data-Pipeline-with-Knowledge-Sources/sample/)       | Coming Soon     |
-| [Querying the Multi-Source AI Knowledge Bases](./3-Foundry-IQ-Querying-the-Multi-Source-AI-Knowledge-Bases/README.md)                | Dive into Knowledge Bases and multi-source query paths                             | Coming Soon     | [Sample](./3-Foundry-IQ-Querying-the-Multi-Source-AI-Knowledge-Bases/sample/)            | Coming Soon     |
+### Foundry IQ
+
+| **Episode**                                                                                                                          | **Description**                                                                    | **Video**       | **Cookbook**                                                                         |
+|--------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|-----------------|-------------------------------------------------------------------------------------| 
+| [Unified Knowledge Layer for Agents](./1-Foundry-IQ-Unified-Knowledge-Layer-for-Agents/README.md)                                    | Understand Foundry IQ's core components and how it fits into the agent architecture | Coming Soon     | [Cookbook](./1-Foundry-IQ-Unified-Knowledge-Layer-for-Agents/sample/)                |
+| [Building the Data Pipeline with Knowledge Sources](./2-Foundry-IQ-Building-the-Data-Pipeline-with-Knowledge-Sources/README.md)      | Learn how different content enters Foundry IQ from various sources                 | Coming Soon     | [Cookbook](./2-Foundry-IQ-Building-the-Data-Pipeline-with-Knowledge-Sources/sample/) |
+| [Querying the Multi-Source AI Knowledge Bases](./3-Foundry-IQ-Querying-the-Multi-Source-AI-Knowledge-Bases/README.md)                | Dive into Knowledge Bases and multi-source query paths                             | Coming Soon     | [Cookbook](./3-Foundry-IQ-Querying-the-Multi-Source-AI-Knowledge-Bases/sample/)      |
+
+### Work IQ
+
+Coming soon!
+
+### Fabric IQ
+
+Coming soon!
 
 ### Episode Format
 
 Each episode includes:
+
 - **Introduction (1 min)**: Executive speech
 - **Tech Talk (15 min)**: Interactive discussion with Product Group + Advocacy
 - **Close-out (1 min)**: Doodle summary
@@ -56,12 +62,7 @@ Each episode includes:
 We'd love to see you contributing to our repo and engaging with the experts with your questions!
 
 - 🤔 Do you have suggestions or have you found spelling or code errors? [Raise an issue](https://github.com/microsoft/iq-series/issues) or [Create a pull request](https://github.com/microsoft/iq-series/pulls).
-- 🚀 If you get stuck or have any questions about Foundry IQ, join our [Azure AI Community Discord](https://discord.gg/REmjGvvFpW).
-
-## Meet The IQ Series Speakers
-
-<!-- Speaker image placeholder - add your speakers image here -->
-![The IQ Series Speakers](./images/speakers.png)
+- 🚀 If you get stuck or have any questions about Microsoft IQ, join our [Discord](https://aka.ms/iq-series/discord).
 
 ## Contributing
 
