@@ -1,21 +1,15 @@
-# Episode 2: Building the Data Pipeline with Knowledge Sources
+# Episode 2: Foundry IQ: Building the Data Pipeline with Knowledge Sources
 
 <!-- Episode video thumbnail - add your thumbnail here -->
-[![Episode 2 video](../images/visuals/episode2-thumbnail.png)](https://aka.ms/iq-series/episode2)
+[![Episode 2 video](../images/FIQ_Episode2.png)](https://aka.ms/iq-series/episode2)
 
-## Overview
-
-Welcome to **Episode 2: Building the Data Pipeline with Knowledge Sources**. This episode introduces Knowledge Sources and explains how different types of content enter Foundry IQ from various locations including SharePoint, Fabric, OneLake, Azure Blob Storage, Azure AI Search, the web, and more.
-
-* **📺 [Watch the session](https://aka.ms/iq-series/episode2)** *(Coming Soon)*
-* **📝 [Read the blog post](https://aka.ms/iq-series/episode2-blog)** *(Coming Soon)*
-* **🚀 [Test the sample](./sample/)**
+📅 **March 25, 2026 at 9 AM PT** | 📺 [Watch the session](https://aka.ms/iq-series/episode2) | 📂 [Try the cookbook](./cookbook/)
 
 ## 🎥 Session Summary
 
 ### 🎬 Executive Introduction
 
-Pablo Castro provides context on Knowledge Sources and how they form the foundation for what comes next in Foundry IQ.
+John Maeda provides context on Knowledge Sources and how they form the foundation for what comes next in Foundry IQ.
 
 ### 💬 Tech Talk
 
@@ -26,18 +20,17 @@ Gia Mondragon and Gustavo Cordido walk through:
 
 ### 🖍 Doodle Summary
 
-A visual summary by Tomomi Imura, sketching how these sources flow into the system.
+A visual summary by Tomomi Imura, sketching how these sources flow into the system, forming the foundation for what comes next.
 
 ![Doodle summary Episode 2](../images/visuals/E2-recap.png)
 
 ## 📂 Sample Code
 
-To get hands-on experience, explore the sample implementation in the 📂 [Episode 2 Sample](./sample/) folder.
+To get hands-on experience, explore the sample implementation in the 📂 [Episode 2 Cookbook](./cookbook/) folder.
 
 ## 🔗 Additional Learning Resources
 
 - 📚 Microsoft Foundry Documentation: [Learn more](https://learn.microsoft.com/azure/ai-foundry/)
-- 📝 Read the Blog for Episode 2: [Building the Data Pipeline with Knowledge Sources](https://aka.ms/iq-series/episode2-blog) *(Coming Soon)*
-- 💬 Join the Discussion: Ask your questions on our [Discord channel](https://discord.gg/REmjGvvFpW)
+-  Join the Discussion: Ask your questions on our [Discord channel](https://discord.gg/REmjGvvFpW)
 
 ### 🚀 Next Up: Continue to [Episode 3](../3-Foundry-IQ-Querying-the-Multi-Source-AI-Knowledge-Bases/) for the next step—Querying the Multi-Source AI Knowledge Bases!

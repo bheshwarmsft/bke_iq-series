@@ -2,44 +2,27 @@
 
 ![The IQ Series Banner](./images/iq-series-banner.png)
 
-Master Microsoft IQ with The IQ Series! Microsoft IQ is a suite of AI-driven intelligence tools, including **Foundry IQ**, **Work IQ**, and **Fabric IQ**, that power knowledge-centric AI systems where retrieval, reasoning, synthesis, and orchestration come together under a single model-driven experience.
+Master Microsoft IQ with The IQ Series! Microsoft IQ is Microsoft's unified intelligence layer for the enterprise, bringing together three core intelligence services:
 
-Each episode features an executive opening, an in-depth tech talk, and a doodle summary. Episode folders also include Jupyter notebook cookbooks that break the topic into key phases with hands-on, step-by-step guidance.
+- **Foundry IQ**: A managed knowledge layer for enterprise data; connecting structured and unstructured data across Azure, SharePoint, OneLake, and the web so agents can access permission-aware knowledge.
+- **Work IQ**: The intelligence layer that personalizes Microsoft 365 Copilot; understanding context, relationships, and work patterns so agents can be faster, more accurate, and more secure.
+- **Fabric IQ**: Unify business semantics across data, models, and systems to power intelligent agents and decisions grounded in a live, holistic view of the business.
+
+Together, these IQs enable AI agents to reason, retrieve, and act with deep business context going beyond traditional RAG for true enterprise intelligence.
 
 > **Note:** The series kicks off with **Foundry IQ** episodes. Work IQ and Fabric IQ content is coming soon!
 
-📺 All episodes will be available on YouTube.
+📺 Foundry IQ episodes premiere **every Wednesday at 9 AM PT**, starting **March 18, 2026** on [Microsoft Developer YouTube](https://aka.ms/iq-series).
 
-## 🤔 Why Learn Microsoft IQ with The IQ Series?
-
-- **Expert-Led**: Learn directly from AI & Microsoft experts.
-- **Full IQ Suite Coverage**: Explore Foundry IQ, Work IQ, and Fabric IQ as they roll out.
-- **Agentic Knowledge Workflows**: Understand how IQ tools plan retrieval, synthesize answers, and support multi-step reasoning.
-- **Video Episodes**: Executive openings, in-depth tech talks, and doodle summaries.
-- **Hands-On Cookbooks**: Jupyter notebooks that segment each topic into key phases.
-- **Doodles & Visual Explanations**: Complex concepts made simple with engaging visuals.
-
-## 🚀 Get Started in 3 Easy Steps
-
-1. [Fork](https://github.com/microsoft/iq-series/fork) the repository.
-2. Clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/your-org/iq-series.git
-   cd iq-series
-   ```
-3. Navigate to the Episode of your choice and follow the README instructions.
-
-## Learning Episodes
-
-The IQ Series helps developers and data practitioners understand Microsoft IQ, a suite of AI-driven intelligence tools. The series starts with Foundry IQ and will expand to Work IQ and Fabric IQ in future episodes.
+## 📚 Episodes
 
 ### Foundry IQ
 
 | **Episode**                                                                                                                          | **Description**                                                                    | **Video**       | **Cookbook**                                                                         |
 |--------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|-----------------|-------------------------------------------------------------------------------------| 
-| [Unified Knowledge Layer for Agents](./1-Foundry-IQ-Unified-Knowledge-Layer-for-Agents/README.md)                                    | Understand Foundry IQ's core components and how it fits into the agent architecture | Coming Soon     | [Cookbook](./1-Foundry-IQ-Unified-Knowledge-Layer-for-Agents/sample/)                |
-| [Building the Data Pipeline with Knowledge Sources](./2-Foundry-IQ-Building-the-Data-Pipeline-with-Knowledge-Sources/README.md)      | Learn how different content enters Foundry IQ from various sources                 | Coming Soon     | [Cookbook](./2-Foundry-IQ-Building-the-Data-Pipeline-with-Knowledge-Sources/sample/) |
-| [Querying the Multi-Source AI Knowledge Bases](./3-Foundry-IQ-Querying-the-Multi-Source-AI-Knowledge-Bases/README.md)                | Dive into Knowledge Bases and multi-source query paths                             | Coming Soon     | [Cookbook](./3-Foundry-IQ-Querying-the-Multi-Source-AI-Knowledge-Bases/sample/)      |
+| [Foundry IQ: Unlocking Knowledge for your Agents](./1-Foundry-IQ-Unified-Knowledge-Layer-for-Agents/README.md)                                    | Understand Foundry IQ's core components and how it fits into the agent architecture | [Mar 18, 2026](https://aka.ms/iq-series/episode1)     | [Cookbook](./1-Foundry-IQ-Unified-Knowledge-Layer-for-Agents/cookbook/)                |
+| [Foundry IQ: Building the Data Pipeline with Knowledge Sources](./2-Foundry-IQ-Building-the-Data-Pipeline-with-Knowledge-Sources/README.md)      | Learn how different content enters Foundry IQ from various sources                 | [Mar 25, 2026](https://aka.ms/iq-series/episode2)     | [Cookbook](./2-Foundry-IQ-Building-the-Data-Pipeline-with-Knowledge-Sources/cookbook/) |
+| [Foundry IQ: Querying the Multi-Source AI Knowledge Bases](./3-Foundry-IQ-Querying-the-Multi-Source-AI-Knowledge-Bases/README.md)                | Dive into Knowledge Bases and multi-source query paths                             | [Apr 1, 2026](https://aka.ms/iq-series/episode3)     | [Cookbook](./3-Foundry-IQ-Querying-the-Multi-Source-AI-Knowledge-Bases/cookbook/)      |
 
 ### Work IQ
 
@@ -56,6 +39,18 @@ Each episode includes:
 - **Introduction (1 min)**: Executive speech
 - **Tech Talk (15 min)**: Interactive discussion with Product Group + Advocacy
 - **Close-out (1 min)**: Doodle summary
+
+Episode folders also include Jupyter notebook cookbooks with hands-on, step-by-step guidance.
+
+## 🚀 Get Started
+
+1. [Fork](https://github.com/microsoft/iq-series/fork) the repository.
+2. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/your-org/iq-series.git
+   cd iq-series
+   ```
+3. Navigate to the Episode of your choice and follow the README instructions.
 
 ## 🙏 Get Involved
 
