@@ -1,13 +1,13 @@
 #!/bin/bash
 set -e
 
-echo "⏳ Waiting 90 seconds for RBAC role propagation..."
+echo "[1/4] Waiting 90 seconds for RBAC role propagation..."
 sleep 90
 
-echo "📦 Installing Python dependencies..."
+echo "[2/4] Installing Python dependencies..."
 pip install --break-system-packages -q azure-search-documents==11.7.0b2 azure-identity requests
 
-echo "🚀 Running data seed script..."
+echo "[3/4] Running data seed script..."
 python3 <<'PYTHON_SCRIPT'
 import os, json, requests
 from azure.identity import DefaultAzureCredential, ManagedIdentityCredential
@@ -36,7 +36,7 @@ INDEX_NAME = "earth-at-night"
 KNOWLEDGE_SOURCE_NAME = "earth-knowledge-source"
 KNOWLEDGE_BASE_NAME = "earth-knowledge-base"
 
-# ── Step 1: Create search index ──────────────────────────────────────────────
+# -- Step 1: Create search index --
 index_client = SearchIndexClient(endpoint=SEARCH_ENDPOINT, credential=credential)
 
 index = SearchIndex(
@@ -80,9 +80,9 @@ index = SearchIndex(
     ),
 )
 index_client.create_or_update_index(index)
-print(f"✅ Index '{INDEX_NAME}' created")
+print(f"[OK] Index '{INDEX_NAME}' created")
 
-# ── Step 2: Upload sample documents ──────────────────────────────────────────
+# -- Step 2: Upload sample documents --
 DATA_URL = "https://raw.githubusercontent.com/Azure-Samples/azure-search-sample-data/main/nasa-e-book/earth-at-night-json/documents.json"
 documents = requests.get(DATA_URL).json()
 
@@ -90,9 +90,9 @@ with SearchIndexingBufferedSender(
     endpoint=SEARCH_ENDPOINT, index_name=INDEX_NAME, credential=credential
 ) as sender:
     sender.upload_documents(documents=documents)
-print(f"✅ {len(documents)} documents uploaded to '{INDEX_NAME}'")
+print(f"[OK] {len(documents)} documents uploaded to '{INDEX_NAME}'")
 
-# ── Step 3: Create knowledge source ──────────────────────────────────────────
+# -- Step 3: Create knowledge source --
 knowledge_source = SearchIndexKnowledgeSource(
     name=KNOWLEDGE_SOURCE_NAME,
     description="NASA Earth at Night data",
@@ -105,9 +105,9 @@ knowledge_source = SearchIndexKnowledgeSource(
     ),
 )
 index_client.create_or_update_knowledge_source(knowledge_source=knowledge_source)
-print(f"✅ Knowledge source '{KNOWLEDGE_SOURCE_NAME}' created")
+print(f"[OK] Knowledge source '{KNOWLEDGE_SOURCE_NAME}' created")
 
-# ── Step 4: Create knowledge base ────────────────────────────────────────────
+# -- Step 4: Create knowledge base --
 knowledge_base = KnowledgeBase(
     name=KNOWLEDGE_BASE_NAME,
     models=[KnowledgeBaseAzureOpenAIModel(
@@ -122,8 +122,8 @@ knowledge_base = KnowledgeBase(
     answer_instructions="Provide a concise, informative answer grounded in the retrieved documents.",
 )
 index_client.create_or_update_knowledge_base(knowledge_base)
-print(f"✅ Knowledge base '{KNOWLEDGE_BASE_NAME}' created")
+print(f"[OK] Knowledge base '{KNOWLEDGE_BASE_NAME}' created")
 
-print(f"\n🎉 Data seeding complete!")
+print(f"\n[4/4] Data seeding complete!")
 print(f"MCP endpoint: {SEARCH_ENDPOINT}/knowledgebases/{KNOWLEDGE_BASE_NAME}/mcp")
 PYTHON_SCRIPT

@@ -40,20 +40,21 @@ Episode folders also include Jupyter notebook cookbooks with hands-on, step-by-s
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://aka.ms/iq-series/deploytoazure)
 
-Click the button above to deploy all required Azure resources — AI Search, Azure OpenAI, a Foundry project, and seeded sample data with a ready-to-use knowledge base.
+Click the button above to deploy all required Azure resources: AI Search, Azure OpenAI, a Foundry project, and seeded sample data with a ready-to-use knowledge base.
 
 In the deployment form:
 
-- **Create a new resource group** (e.g., `iq-series-rg`) — click **Create new** under the Resource group field
-- Enter your **User Object ID** — run the following in a terminal to get it:
+- **Create a new resource group** (e.g., `iq-series-rg`): click **Create new** under the Resource group field
+- Enter your **User Object ID**: run the following in a terminal to get it:
 
 ```bash
+az login
 az ad signed-in-user show --query id -o tsv
 ```
 
 - Customize the resource prefix, location, and SKUs as needed, then click **Review + create**
 
-Once deployment completes, copy the **Azure AI Search endpoint** from the deployment **Outputs** tab — you'll need it in the next step.
+Once deployment completes, copy the **Azure AI Search endpoint** from the deployment **Outputs** tab. You'll need it in the next step.
 
 ### 2. Learn with Copilot
 

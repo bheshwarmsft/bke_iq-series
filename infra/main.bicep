@@ -374,10 +374,11 @@ resource seedDataScript 'Microsoft.Resources/deploymentScripts@2023-08-01' = if 
     }
   }
   properties: {
-    azCliVersion: '2.64.0'
+    azCliVersion: '2.61.0'
     retentionInterval: 'PT1H'
     cleanupPreference: 'OnSuccess'
     timeout: 'PT15M'
+    forceUpdateTag: uniqueSuffix
     scriptContent: loadTextContent('scripts/seed-data.sh')
     environmentVariables: [
       { name: 'SEARCH_ENDPOINT', value: 'https://${searchService.name}.search.windows.net' }
