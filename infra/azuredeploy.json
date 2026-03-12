@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.39.26.7824",
-      "templateHash": "8846229865520299686"
+      "templateHash": "3255913851567407658"
     }
   },
   "parameters": {
@@ -128,6 +128,8 @@
       "aiServices": "[format('{0}-ai-{1}', parameters('resourcePrefix'), variables('uniqueSuffix'))]",
       "project": "[format('{0}-project', parameters('resourcePrefix'))]",
       "searchConnection": "iq-series-search-connection",
+      "storage": "[format('{0}stor{1}', parameters('resourcePrefix'), variables('uniqueSuffix'))]",
+      "blobContainer": "product-manuals",
       "embeddingDeployment": "text-embedding-3-large",
       "chatDeployment": "gpt-4o-mini"
     },
@@ -137,7 +139,8 @@
       "searchIndexDataReader": "1407120a-92aa-4202-b7e9-c0e197c71c8f",
       "cognitiveServicesUser": "a97b65f3-24c7-4388-baec-2e87135dc908",
       "cognitiveServicesContributor": "25fbc0a9-bd7c-42a3-aa1a-3b75d497ee68",
-      "cognitiveServicesOpenAIUser": "5e0bd9bd-7b93-4f28-af87-19fc36ad61bd"
+      "cognitiveServicesOpenAIUser": "5e0bd9bd-7b93-4f28-af87-19fc36ad61bd",
+      "storageBlobDataContributor": "ba92f5b4-2d11-453d-a403-e96b0029c9fe"
     }
   },
   "resources": [
@@ -242,6 +245,41 @@
       "dependsOn": [
         "[resourceId('Microsoft.CognitiveServices/accounts/projects', variables('names').aiServices, variables('names').project)]",
         "[resourceId('Microsoft.Search/searchServices', variables('names').search)]"
+      ]
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2023-05-01",
+      "name": "[variables('names').storage]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "StorageV2",
+      "properties": {
+        "accessTier": "Hot",
+        "allowBlobPublicAccess": false,
+        "minimumTlsVersion": "TLS1_2",
+        "supportsHttpsTrafficOnly": true
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/blobServices",
+      "apiVersion": "2023-05-01",
+      "name": "[format('{0}/{1}', variables('names').storage, 'default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('names').storage)]"
+      ]
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+      "apiVersion": "2023-05-01",
+      "name": "[format('{0}/{1}/{2}', variables('names').storage, 'default', variables('names').blobContainer)]",
+      "properties": {
+        "publicAccess": "None"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/blobServices', variables('names').storage, 'default')]"
       ]
     },
     {
@@ -420,6 +458,20 @@
       },
       "dependsOn": [
         "[resourceId('Microsoft.CognitiveServices/accounts', variables('names').aiServices)]"
+      ]
+    },
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "apiVersion": "2022-04-01",
+      "scope": "[format('Microsoft.Storage/storageAccounts/{0}', variables('names').storage)]",
+      "name": "[guid(resourceGroup().id, variables('names').storage, parameters('userObjectId'), variables('roles').storageBlobDataContributor)]",
+      "properties": {
+        "principalId": "[parameters('userObjectId')]",
+        "principalType": "User",
+        "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', variables('roles').storageBlobDataContributor)]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('names').storage)]"
       ]
     },
     {
@@ -613,6 +665,20 @@
         "description": "AI Search connection name (use in .env)"
       },
       "value": "[variables('names').searchConnection]"
+    },
+    "blobConnectionString": {
+      "type": "string",
+      "metadata": {
+        "description": "Blob Storage connection string (use as BLOB_CONNECTION_STRING in .env)"
+      },
+      "value": "[format('DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1};EndpointSuffix={2}', variables('names').storage, listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('names').storage), '2023-05-01').keys[0].value, environment().suffixes.storage)]"
+    },
+    "blobContainerName": {
+      "type": "string",
+      "metadata": {
+        "description": "Blob container name (use as BLOB_CONTAINER_NAME in .env)"
+      },
+      "value": "[variables('names').blobContainer]"
     },
     "resourceLocation": {
       "type": "string",

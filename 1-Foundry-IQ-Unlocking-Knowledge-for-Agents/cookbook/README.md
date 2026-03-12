@@ -13,7 +13,7 @@ This folder contains the hands-on cookbook for Episode 1 of The IQ Series.
 
 > **Note:** This deployment is shared across all Foundry IQ episodes. You only need to deploy once — if you've already deployed for another episode, skip this step and reuse your existing resources.
 
-Deploy all required Azure resources with one click — this creates AI Search, Azure OpenAI, AI Services, a Foundry project, an AI Search connection, model deployments, and RBAC roles:
+Deploy all required Azure resources with one click — this creates AI Search, Azure OpenAI, AI Services, a Foundry project, an AI Search connection, Azure Blob Storage, model deployments, and RBAC roles:
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://aka.ms/iq-series/deploytoazure)
 
@@ -46,7 +46,7 @@ AZURE_AI_SEARCH_CONNECTION_NAME=iq-series-search-connection
 FOUNDRY_PROJECT_RESOURCE_ID=/subscriptions/<sub>/resourceGroups/<rg>/providers/Microsoft.MachineLearningServices/workspaces/<workspace>/projects/<project>
 ```
 
-**Where to find these values:** All values are available in the deployment **Outputs** tab in the Azure portal. You can also find them in [Microsoft Foundry](https://ai.azure.com) → your project → **Overview**. The `FOUNDRY_PROJECT_RESOURCE_ID` is the full ARM resource ID of your Foundry project, found in the Azure portal under your project's **Properties**.
+**Where to find these values:** All values except `FOUNDRY_PROJECT_RESOURCE_ID` are available in the deployment **Outputs** tab in the Azure portal. To find the project resource ID, go to [Microsoft Foundry](https://ai.azure.com) → your project → **Overview** → **Properties** and copy the full ARM resource ID.
 
 For CLI deployment and cleanup instructions, see the [Infrastructure Guide](../../infra/README.md).
 

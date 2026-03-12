@@ -2,7 +2,8 @@
 // IQ Series — Foundry IQ Infrastructure
 // Creates: Azure AI Search, Azure OpenAI (with model deployments),
 //          AI Services (Foundry) with Foundry Project,
-//          AI Search connection, and RBAC role assignments
+//          AI Search connection, Azure Blob Storage,
+//          and RBAC role assignments
 // ===============================================
 
 @description('Your user object ID (az ad signed-in-user show --query id -o tsv)')
@@ -61,6 +62,8 @@ var names = {
   aiServices: '${resourcePrefix}-ai-${uniqueSuffix}'
   project: '${resourcePrefix}-project'
   searchConnection: 'iq-series-search-connection'
+  storage: '${resourcePrefix}stor${uniqueSuffix}'
+  blobContainer: 'product-manuals'
   embeddingDeployment: 'text-embedding-3-large'
   chatDeployment: 'gpt-4o-mini'
 }
@@ -76,6 +79,7 @@ var roles = {
   cognitiveServicesUser: 'a97b65f3-24c7-4388-baec-2e87135dc908'
   cognitiveServicesContributor: '25fbc0a9-bd7c-42a3-aa1a-3b75d497ee68'
   cognitiveServicesOpenAIUser: '5e0bd9bd-7b93-4f28-af87-19fc36ad61bd'
+  storageBlobDataContributor: 'ba92f5b4-2d11-453d-a403-e96b0029c9fe'
 }
 
 // ===============================================
@@ -188,6 +192,38 @@ resource searchConnection 'Microsoft.CognitiveServices/accounts/projects/connect
       ApiType: 'Azure'
       ResourceId: searchService.id
     }
+  }
+}
+
+// ===============================================
+// AZURE BLOB STORAGE (for Episode 2 — Blob Knowledge Source)
+// ===============================================
+
+resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = {
+  name: names.storage
+  location: location
+  sku: {
+    name: 'Standard_LRS'
+  }
+  kind: 'StorageV2'
+  properties: {
+    accessTier: 'Hot'
+    allowBlobPublicAccess: false
+    minimumTlsVersion: 'TLS1_2'
+    supportsHttpsTrafficOnly: true
+  }
+}
+
+resource blobService 'Microsoft.Storage/storageAccounts/blobServices@2023-05-01' = {
+  parent: storageAccount
+  name: 'default'
+}
+
+resource blobContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-05-01' = {
+  parent: blobService
+  name: names.blobContainer
+  properties: {
+    publicAccess: 'None'
   }
 }
 
@@ -357,6 +393,17 @@ resource userRole_aiServicesContributor 'Microsoft.Authorization/roleAssignments
   }
 }
 
+// Storage Blob Data Contributor (for Episode 2 — upload docs to blob)
+resource userRole_storageBlobContributor 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+  name: guid(resourceGroup().id, storageAccount.name, userObjectId, roles.storageBlobDataContributor)
+  scope: storageAccount
+  properties: {
+    principalId: userObjectId
+    principalType: 'User'
+    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roles.storageBlobDataContributor)
+  }
+}
+
 // ===============================================
 // DATA SEEDING (Deployment Script)
 // Creates search index, uploads sample data,
@@ -477,6 +524,12 @@ output foundryProjectEndpoint string = 'https://${names.aiServices}.services.ai.
 
 @description('AI Search connection name (use in .env)')
 output searchConnectionName string = searchConnection.name
+
+@description('Blob Storage connection string (use as BLOB_CONNECTION_STRING in .env)')
+output blobConnectionString string = 'DefaultEndpointsProtocol=https;AccountName=${storageAccount.name};AccountKey=${storageAccount.listKeys().keys[0].value};EndpointSuffix=${environment().suffixes.storage}'
+
+@description('Blob container name (use as BLOB_CONTAINER_NAME in .env)')
+output blobContainerName string = blobContainer.name
 
 @description('Resource location')
 output resourceLocation string = location

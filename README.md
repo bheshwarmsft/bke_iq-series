@@ -40,7 +40,7 @@ Episode folders also include Jupyter notebook cookbooks with hands-on, step-by-s
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://aka.ms/iq-series/deploytoazure)
 
-Click the button above to deploy all required Azure resources: AI Search, Azure OpenAI, a Foundry project, and seeded sample data with a ready-to-use knowledge base.
+Click the button above to deploy all required Azure resources: AI Search, Azure OpenAI, a Foundry project, Azure Blob Storage, and seeded sample data with a ready-to-use knowledge base.
 
 In the deployment form:
 
@@ -87,7 +87,4 @@ We'd love to see you contributing to our repo and engaging with the experts with
 
 - 🤔 Do you have suggestions or have you found spelling or code errors? [Raise an issue](https://github.com/microsoft/iq-series/issues) or [Create a pull request](https://github.com/microsoft/iq-series/pulls).
 - 🚀 If you get stuck or have any questions about Microsoft IQ, join our [Discord](https://aka.ms/iq-series/discord).
-
-## [Contributing](./CONTRIBUTING.md)
-
-## [Trademarks](./TRADEMARKS.md)
+- Check out [Contributing](./CONTRIBUTING.md) & [Trademarks](./TRADEMARKS.md) details.

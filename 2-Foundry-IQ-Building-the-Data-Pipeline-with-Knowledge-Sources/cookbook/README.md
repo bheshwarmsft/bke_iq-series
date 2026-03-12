@@ -13,7 +13,7 @@ This folder contains the hands-on cookbook for Episode 2 of The IQ Series.
 
 > **Note:** This deployment is shared across all Foundry IQ episodes. You only need to deploy once — if you've already deployed for another episode, skip this step and reuse your existing resources.
 
-Deploy all required Azure resources with one click — this creates AI Search, Azure OpenAI, AI Services, a Foundry project, an AI Search connection, model deployments, and RBAC roles:
+Deploy all required Azure resources with one click — this creates AI Search, Azure OpenAI, AI Services, a Foundry project, an AI Search connection, Azure Blob Storage, model deployments, and RBAC roles:
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://aka.ms/iq-series/deploytoazure)
 
@@ -44,7 +44,7 @@ BLOB_CONNECTION_STRING=<your-blob-connection-string>
 BLOB_CONTAINER_NAME=<your-container-name>
 ```
 
-**Where to find these values:** Search and OpenAI values are available in the deployment **Outputs** tab in the Azure portal. The Blob Storage connection string is found in the Azure portal under your Storage account → **Access keys**.
+**Where to find these values:** All values are available in the deployment **Outputs** tab in the Azure portal. Copy `searchEndpoint`, `openAiEndpoint`, `blobConnectionString`, and `blobContainerName` directly from the outputs.
 
 For CLI deployment and cleanup instructions, see the [Infrastructure Guide](../../infra/README.md).
 
