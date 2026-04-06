@@ -14,7 +14,7 @@ Together, these IQs enable AI agents to reason, retrieve, and act with deep busi
 
 > **Note:** The series kicks off with **Foundry IQ** episodes. Work IQ and Fabric IQ content is coming soon!
 
-📺 Foundry IQ episodes premiere **every Wednesday at 9 AM PT**, starting **March 18, 2026** on [Microsoft Developer YouTube](https://aka.ms/iq-series).
+📺 Foundry IQ episodes premiere **every Wednesday at 9 AM PT**, starting **March 18, 2026** on [Microsoft Developer YouTube](https://aka.ms/iq-series/episodes).
 
 ## 📚 Episodes
 
