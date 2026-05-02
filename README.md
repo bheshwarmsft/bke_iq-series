@@ -80,6 +80,18 @@ Once deployment completes, copy the **Azure AI Search endpoint** and **API key**
 > 1. **Run the Episode 1 cookbook**: Open the [Episode 1 cookbook](./1-Foundry-IQ-Unlocking-Knowledge-for-Agents/cookbook/) and run it end-to-end — it indexes the same NASA "Earth at Night" sample data to your AI Search and creates the knowledge source and knowledge base.
 > 2. **Seed via Foundry IQ UI**: Create an index in AI Search manually using the [NASA Earth at Night dataset](https://raw.githubusercontent.com/Azure-Samples/azure-search-sample-data/main/nasa-e-book/earth-at-night-json/documents.json), then create a knowledge source and knowledge base pointing to it through the Foundry IQ portal.
 
+### 1.5 Install local Python dependencies
+
+If you're running the repo locally, install the notebook dependencies from `requirements.txt` after activating your Python environment:
+
+```bash
+cd /workspaces/iq-series
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+If you haven't created the virtual environment yet, use `python3 -m venv .venv` first.
+
 ### 2. Learn with Copilot
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://aka.ms/iq-series/learnwithcopilot)

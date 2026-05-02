@@ -68,10 +68,26 @@ The [**Foundry IQ Cookbook**](./foundry-iq-cookbook.ipynb) walks you through Fou
 
 ### Quick Start
 
-1. Install dependencies: `pip install -U azure-search-documents==11.7.0b2 azure-ai-projects azure-identity python-dotenv`
-2. Sign in to Azure: run `az login` in a terminal
-3. Create a `.env` file with your endpoint values (see above)
-4. Open `foundry-iq-cookbook.ipynb` in VS Code and run the cells
+1. Create and activate a local virtual environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+2. Install dependencies from `requirements.txt`:
+
+```bash
+pip install -r ../../requirements.txt
+```
+
+   Or, if you prefer, use:
+
+```bash
+pip install -U azure-search-documents==11.7.0b2 azure-ai-projects azure-identity python-dotenv
+```
+3. Sign in to Azure: run `az login` in a terminal
+4. Create a `.env` file with your endpoint values (see above)
+5. Open `foundry-iq-cookbook.ipynb` in VS Code and run the cells
 
 > **Running in GitHub Codespaces?** The devcontainer already installs all dependencies and the VS Code Jupyter extension automatically. Just open the `.ipynb` file directly in the VS Code editor — no need to install or launch a standalone Jupyter server. The notebook renders and runs natively inside VS Code.
 
